@@ -1,0 +1,114 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    font-family: Verdana, sans-serif;
+}
+
+:root {
+    --hue-neutral: 200;
+    --hue-wrong: 0;
+    --hue-correct: 145;
+}
+
+body {
+    --hue: var(--hue-neutral);
+    background-color: hsl(var(--hue), 100%, 20%);
+    margin: 0;
+    padding: 0;
+    width: 100vw; height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    position: relative;
+}
+
+body.correct {--hue: var(--hue-correct);}
+body.wrong {--hue: var(--hue-wrong);}
+
+h1.title {
+    position: absolute;
+    top: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #eee;
+    font-size: 2rem;
+}
+
+.container {
+    width: 700px;
+    min-height: 20rem;
+    max-width: 80%;
+    background: #aaa;
+    border-radius: .5rem;
+    padding: .5em;
+    box-shadow: 0 0 5px 2px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    transition: transform .4s;
+}
+
+#question {
+    padding: 1rem .5em;
+}
+
+.btn-grid {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 1em;
+    margin: 1.25em 0;
+}
+
+.btn {
+    --hue: var(--hue-neutral);
+    background-color: hsl(var(--hue), 100%, 50%);
+    border: 2px solid hsl(var(--hue-neutral), 100%, 30%);
+    border-radius: .25rem;
+    padding: .5em 1em;
+    color: #fff;
+    outline: none;
+    cursor: pointer;
+    font-size: 1.25rem;
+}
+    .btn:hover {
+        border-color: #000;
+    }
+
+.btn.correct {
+    --hue: var(--hue-correct);
+    color: #333;
+}
+.btn.wrong {
+    --hue: var(--hue-wrong);
+}
+
+.start-btn, .next-btn {
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: .5em 1.25em;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hide {
+    display: none;
+}
+
+@media screen and (max-width: 900px) {
+	html {
+		font-size: 12px;
+	}
+}
+
+@media screen and (max-width: 567px) {
+	html {
+		font-size: 10px;
+    }
+    .container {
+        max-width: 90%;
+    }
+}
