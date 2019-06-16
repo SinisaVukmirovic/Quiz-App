@@ -131,9 +131,9 @@ const questions = [
     {
         question: 'NPM stands for...',
         answers: [
-            { text: 'Nodes Per Minute', correct: true },
+            { text: 'Nodes Per Minute', correct: false },
             { text: 'Not Package Manager', correct: false },
-            { text: 'Node Package Manager', correct: false },
+            { text: 'Node Package Manager', correct: true },
             { text: 'No Programming Mode', correct: false }
         ]
     }
